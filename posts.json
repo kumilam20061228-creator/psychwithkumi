@@ -1,0 +1,34 @@
+[
+  {
+    "id": "welcome",
+    "title": "Welcome: What this portfolio is for",
+    "date": "2026-03-03",
+    "tags": ["Portfolio", "Research Communication"],
+    "file": "2026-03-03-welcome.md",
+    "excerpt": "Why I'm documenting research, writing, and interviews — and how this space will evolve."
+  },
+  {
+    "id": "international-student",
+    "title": "Not Quite Here, Not Quite There: Reflections from an International Psychology Student",
+    "date": "2026-02-28",
+    "tags": ["International Students", "Identity", "Wellbeing"],
+    "file": "2026-02-28-international-student.md",
+    "excerpt": "Reflections on the unique challenges and experiences of international students in psychology."
+  },
+  {
+    "id": "reflections-bps-chair-elect",
+    "title": "Reflections on my first in-person meeting as a BPS Student Committee Chair-Elect",
+    "date": "2026-02-20",
+    "tags": ["BPSPsychology", "Psychology Students", "Leadership"],
+    "file": "2026-02-20-reflections-bps-chair-elect.md",
+    "excerpt": "Insights and takeaways from my first in-person meeting as a British Psychological Society Student Committee Chair-Elect."
+  },
+  {
+    "id": "dream-analysis",
+    "title": "Can dream analysis provide a valid understanding of the human mind?",
+    "date": "2024-11-19",
+    "tags": ["Dream", "Freud", "Jung", "Psychoanalysis"],
+    "file": "2024-11-19-dream-analysis.md",
+    "excerpt": "A critical examination of the validity of dream analysis as a method for understanding the human mind, comparing Freudian and Jungian perspectives."
+  }
+]

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Related Posts | Psych with Kumi</title>
+  <link rel="stylesheet" href="styles.css?v=2" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      <h1>Related Posts</h1>
+      <p class="muted">Filtered by topic</p>
+
+      <div class="grid" id="relatedList"></div>
+
+      <p style="margin-top:30px;">
+        <a class="link" href="index.html">← Back to homepage</a>
+      </p>
+    </div>
+  </section>
+
+  <script>
+    async function loadRelated() {
+      const params = new URLSearchParams(window.location.search);
+      const tagsParam = params.get("tags");
+      const filterTags = tagsParam
+        ? tagsParam.split(",").map(t => t.trim())
+        : [];
+
+      const res = await fetch("posts/posts.json");
+      const posts = await res.json();
+
+      const filtered = posts.filter(p => {
+        if (!filterTags.length) return true;
+        const postTags = p.tags || [];
+        return filterTags.some(tag => postTags.includes(tag));
+      });
+
+      const container = document.getElementById("relatedList");
+
+      if (!filtered.length) {
+        container.innerHTML = `<p class="muted">No related posts found.</p>`;
+        return;
+      }
+
+      container.innerHTML = filtered.map(p => `
+        <article class="card">
+          <h3 class="card-title">${p.title}</h3>
+          <p class="muted">${p.excerpt || ""}</p>
+          <a class="btn small" href="index.html#blog/${p.id}">Read →</a>
+        </article>
+      `).join("");
+    }
+
+    loadRelated();
+  </script>
+</body>
+</html>
